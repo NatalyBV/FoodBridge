@@ -1,7 +1,7 @@
 import * as cdk from '@aws-cdk/core';
 import * as path from "path";
 import { Bucket } from '@aws-cdk/aws-s3';
-import { Asset } from '@aws-cdk/aws-s3-assets';
+import { BucketDeployment, Source } from '@aws-cdk/aws-s3-deployment';
 import { Properties } from './properties';
 import { RemovalPolicy } from '@aws-cdk/core';
 
@@ -20,8 +20,9 @@ export class FrontEndStack extends cdk.Stack {
       websiteErrorDocument: '404error.html',
     });
 
-    new Asset(this, 'site-statics', {
-      path: path.resolve("..", "statics"),
+    new BucketDeployment(this, 'populate-statics', {
+      sources: [Source.asset(path.resolve('..', 'statics'))],
+      destinationBucket: this.staticAssetsBucket,
     });
   }
 }

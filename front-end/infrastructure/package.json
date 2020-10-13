@@ -9,7 +9,7 @@
     "test": "jest",
     "synth": "cdk synth",
     "diff": "cdk diff",
-    "deploy": "cdk deploy"
+    "deploy": "cdk bootstrap; cdk --require-approval never deploy"
   },
   "devDependencies": {
     "@aws-cdk/assert": "1.67.0",
@@ -24,6 +24,7 @@
   "dependencies": {
     "@aws-cdk/aws-s3": "^1.67.0",
     "@aws-cdk/aws-s3-assets": "^1.67.0",
+    "@aws-cdk/aws-s3-deployment": "^1.67.0",
     "@aws-cdk/core": "1.67.0",
     "source-map-support": "^0.5.16"
   }
