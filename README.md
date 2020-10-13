@@ -9,5 +9,5 @@ FoodBridge is a next generation food delivery application.
 3. Run deploy script
    * Run `bash ./scripts/deploy.sh`
 
-###Components dependencies diagram
+### Components dependencies diagram
 ![Components dependencies diagram](images/service-dependencies-diagram.png)
