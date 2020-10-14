@@ -1,0 +1,46 @@
+openapi: "3.0.2"
+info:
+  title: Food Brdige API
+  version: "0.1"
+paths:
+  '/v1/restaurant/{rest_id}/meal':
+    get:
+      description: 'Returns list of meals of the restaurant.'
+    post:
+      description: 'Add new meal to menu.'
+  '/v1/restaurant/{rest_id}/meal/{meal_id}':
+    get:
+      description: 'Get meal details.'
+    put:
+      description: 'Update meal.'
+    delete:
+      description: 'Delete meal.'
+  '/v1/restaurant/order/{order_id}/accept':
+    post:
+      description: 'Restaurant have accepted the order.'
+  '/v1/restaurant/order/{order_id}/cancel':
+    post:
+      description: 'Restaurant have canceled the order.'
+  '/v1/restaurant/order/{order_id}/done':
+    post:
+      description: 'Restaurant have done the order.'
+
+
+  '/v1/client/order/':
+    get:
+      description: 'Returns list of clients orders.'
+    post:
+      description: 'Make new order.'
+  '/v1/client/order/{order_id}/cancel':
+    post:
+      description: : 'Cancel order.'
+
+  '/v1/deliverer/{id}/accept':
+    post:
+      description: 'Accept the order.'
+  '/v1/deliverer/{id}/take':
+    post:
+      description: 'Take order from restaurant.'
+  '/v1/deliverer/{id}/deliver':
+    post:
+      description: 'Deliver order client.'
